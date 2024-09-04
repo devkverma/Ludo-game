@@ -114,6 +114,13 @@ class Board:
             for j in range(3):
                 self.squares[y+j][x+i] = 50
 
+class Game:
+    def __init__(self,board):
+        self.board = board
+    
+class Piece:
+    def __init__(self):
+        pass
 
 def main():
     
