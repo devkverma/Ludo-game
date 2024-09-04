@@ -46,6 +46,10 @@ class Board:
         self.drawCircle(RADIUS,(x+4*SQSIZE,y+2*SQSIZE),color)
         self.drawCircle(RADIUS,(x+4*SQSIZE,y+4*SQSIZE),color)
 
+    def victoryLane(self,pos):
+        x,y = pos
+        pass
+
 def main():
     
     board = Board()
