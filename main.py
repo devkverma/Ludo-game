@@ -32,6 +32,8 @@ class Board:
         self.playerSpot(BLUE,(0,9),3)
         self.playerSpot(YELLOW,(9,9),4)
 
+        self.victorySpot()
+
         
 
     def grid(self):
@@ -100,6 +102,17 @@ class Board:
                     pygame.draw.rect(screen,color,rect)
                     self.squares[y][x] = player*10 + 1
                     x += 1
+    
+    def victorySpot(self):
+        pygame.draw.polygon(screen,GREEN,[(6*SQSIZE,6*SQSIZE),(9*SQSIZE,6*SQSIZE),(7*SQSIZE + RADIUS,7*SQSIZE + RADIUS)])
+        pygame.draw.polygon(screen,RED,[(6*SQSIZE,6*SQSIZE),(6*SQSIZE,9*SQSIZE),(7*SQSIZE + RADIUS,7*SQSIZE + RADIUS)])
+        pygame.draw.polygon(screen,YELLOW,[(9*SQSIZE,6*SQSIZE),(9*SQSIZE,9*SQSIZE),(7*SQSIZE + RADIUS,7*SQSIZE + RADIUS)])
+        pygame.draw.polygon(screen,BLUE,[(6*SQSIZE,9*SQSIZE),(9*SQSIZE,9*SQSIZE),(7*SQSIZE + RADIUS,7*SQSIZE + RADIUS)])
+
+        x = y = 6
+        for i in range(3):
+            for j in range(3):
+                self.squares[y+j][x+i] = 50
 
 
 def main():
